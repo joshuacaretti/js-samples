@@ -1,4 +1,10 @@
 /**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/**
  * Returns a random lat lng position within the map bounds.
  * @param {!google.maps.Map} map
  * @return {!google.maps.LatLngLiteral}
@@ -105,4 +111,5 @@ function refreshMap() {
 }
 
 initMap();
+
 export {};

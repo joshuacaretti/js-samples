@@ -4,9 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
 let map;
 let lastClickedFeatureIds = [];
 let datasetLayer;
+
 
 function handleClick( /* MouseEvent */ e) {
   if (e.features) {
@@ -17,6 +19,8 @@ function handleClick( /* MouseEvent */ e) {
   //@ts-ignore
   datasetLayer.style = setStyle;
 }
+
+
 
 function setStyle(/* FeatureStyleFunctionOptions */ params) {
     const datasetFeature = params.feature;
@@ -41,6 +45,7 @@ function setStyle(/* FeatureStyleFunctionOptions */ params) {
     };
 }
 
+
 async function initMap() {
     // Request needed libraries.
     const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
@@ -59,7 +64,9 @@ async function initMap() {
     //@ts-ignore
     datasetLayer = map.getDatasetFeatureLayer(datasetId);
     datasetLayer.style = setStyle;
+
     datasetLayer.addListener('click', handleClick);
+
 
     const attributionDiv = document.createElement('div');
     const attributionControl = createAttribution(map);
@@ -81,4 +88,5 @@ function createAttribution(map) {
 }
 
 initMap();
+
 export { };

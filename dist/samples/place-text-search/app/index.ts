@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
 let map;
 let center;
 
@@ -66,5 +67,6 @@ async function findPlaces(LatLng, LatLngBounds) {
 }
 
 initMap();
+
 
 export { };

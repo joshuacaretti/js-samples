@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2022 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 let map: google.maps.Map;
 let featureLayer;
 let infoWindow: google.maps.InfoWindow;
@@ -14,15 +20,18 @@ async function initMap() {
     // "Administrative Area Level 2" Data Driven Styling type.
     mapId: "a3efe1c035bad51b", // <YOUR_MAP_ID_HERE>,
   });
+
   // Add the feature layer.
   //@ts-ignore
   featureLayer = map.getFeatureLayer("ADMINISTRATIVE_AREA_LEVEL_2");
   // Add the event listener for the feature layer.
   featureLayer.addListener("click", handlePlaceClick);
+
   infoWindow = new InfoWindow({});
   // Apply style on load, to enable clicking.
   applyStyleToSelected();
 }
+
 // Handle the click event.
 async function handlePlaceClick(event) {
   let feature = event.features[0];
@@ -41,6 +50,7 @@ async function handlePlaceClick(event) {
     "</span>";
   updateInfoWindow(content, event.latLng);
 }
+
 // Stroke and fill with minimum opacity value.
 //@ts-ignore
 const styleDefault: google.maps.FeatureStyleOptions = {
@@ -58,6 +68,7 @@ const styleClicked: google.maps.FeatureStyleOptions = {
   fillColor: "#810FCB",
   fillOpacity: 0.5,
 };
+
 // Apply styles to the map.
 function applyStyleToSelected(placeid?) {
   // Apply styles to the feature layer.
@@ -81,4 +92,5 @@ function updateInfoWindow(content, center) {
 }
 
 initMap();
+
 export {};

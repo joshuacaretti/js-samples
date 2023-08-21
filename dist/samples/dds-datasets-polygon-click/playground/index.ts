@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 let map;
 let lastClickedFeatureIds = [];
 let datasetLayer;
@@ -59,6 +65,7 @@ async function initMap() {
   //@ts-ignore
   datasetLayer = map.getDatasetFeatureLayer(datasetId);
   datasetLayer.style = setStyle;
+
   datasetLayer.addListener("click", handleClick);
 
   const attributionDiv = document.createElement("div");
@@ -81,4 +88,5 @@ function createAttribution(map) {
 }
 
 initMap();
+
 export {};

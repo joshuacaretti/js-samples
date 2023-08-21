@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
+
 let map: google.maps.Map;
 let centerCoordinates = { lat: 37.4161493, lng: -122.0812166 };
 
@@ -48,6 +50,8 @@ async function findPlace(AdvancedMarkerElement, Place) {
     }
 }
 
+
+
 async function getPlaceDetails(Place) {
     // Use place ID to create a new Place instance.
     const place = new Place({
@@ -62,6 +66,8 @@ async function getPlaceDetails(Place) {
     console.log(place.displayName);
     console.log(place.formattedAddress);
 }
+
+
 
 async function findPlaceByPhone(AdvancedMarkerElement, Place) {
     const request = {
@@ -83,5 +89,7 @@ async function findPlaceByPhone(AdvancedMarkerElement, Place) {
     }
 }
 
+
 initMap();
+
 export { };

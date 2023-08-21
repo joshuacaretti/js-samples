@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright 2022 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 let map: google.maps.Map;
 let marker: google.maps.marker.AdvancedMarkerElement;
 let infoWindow: google.maps.InfoWindow;
@@ -16,6 +22,7 @@ async function initMap(): Promise<void> {
     mapId: "4504f8b37365c3d0",
     mapTypeControl: false,
   });
+
   // Create the input HTML element, and add it to the map as a custom control.
   const input = document.createElement("input");
   input.id = "pac-input";
@@ -76,4 +83,5 @@ function updateInfoWindow(content, center) {
 }
 
 initMap();
+
 export {};

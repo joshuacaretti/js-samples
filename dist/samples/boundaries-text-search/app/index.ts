@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
 let map;
 let featureLayer;
 let center;
@@ -27,6 +28,7 @@ async function initMap() {
 
     findBoundary(Place);
 }
+
 async function findBoundary(Place) {
     const request = {
         query: 'Trinidad, CA',
@@ -63,6 +65,8 @@ function styleBoundary(placeid) {
         }
     };
 }
+
 initMap();
+
 
 export { };

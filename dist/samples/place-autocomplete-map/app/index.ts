@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+
 let map: google.maps.Map;
 let marker: google.maps.marker.AdvancedMarkerElement;
 let infoWindow: google.maps.InfoWindow;
@@ -22,6 +23,7 @@ async function initMap(): Promise<void> {
         mapId: '4504f8b37365c3d0',
         mapTypeControl: false,
     });
+
     // Create the input HTML element, and add it to the map as a custom control.
     const input = document.createElement('input');
     input.id = 'pac-input';
@@ -32,12 +34,14 @@ async function initMap(): Promise<void> {
     card.appendChild(pac.element as HTMLElement);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
 
+
     // Create the marker and infowindow
     marker = new google.maps.marker.AdvancedMarkerElement({
         map,
     });
     
     infoWindow = new google.maps.InfoWindow({});
+
 
     // Add the gmp-placeselect listener, and display the results on the map.
     pac.addListener('gmp-placeselect', async ({ place }) => {
@@ -59,6 +63,7 @@ async function initMap(): Promise<void> {
         updateInfoWindow(content, place.location);
         marker.position = place.location;
     });
+
 }
 
 // Helper function to create an info window.
@@ -73,4 +78,5 @@ function updateInfoWindow(content, center) {
 }
 
 initMap();
+
 export { };
